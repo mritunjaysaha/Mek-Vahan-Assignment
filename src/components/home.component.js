@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Button, Layout } from "antd";
+import { Layout } from "antd";
 import Popup from "./modal.component";
 const { Content } = Layout;
 export default function Home() {
     const [data, setData] = useState();
-    function handleClick() {}
 
     return (
         <Layout className="home-layout">

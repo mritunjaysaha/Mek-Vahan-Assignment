@@ -165,16 +165,17 @@
 }
 
 .home-content-left {
-  width: 20vw !important;
+  width: 20vw;
   position: relative;
+  margin: 2% 0 2% 2%;
 }
 .home-content-left .user-info {
   background-color: white;
-  margin: 1.25em;
   padding: 1em 1em;
   position: relative;
   display: flex;
   flex-direction: row;
+  margin-bottom: 2em;
 }
 .home-content-left .profile {
   background-color: #999;
@@ -189,13 +190,12 @@
   white-space: pre-line;
 }
 .home-content-left .user-panel {
-  margin: 1.25em;
   padding: 0.5em 0;
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  height: 77%;
+  height: calc(100% - (4% + 13%));
 }
 .home-content-left .user-panel .active {
   color: var(--mek-vahan) !important;
@@ -208,7 +208,7 @@
 .home-content-right {
   background-color: #fff;
   width: 100%;
-  margin: 1.25em 1.5em 1.8em 0;
+  margin: 2%;
 }
 .home-content-right .active-tab {
   height: 10vh;
