@@ -1,0 +1,53 @@
+@import "~antd/dist/antd.css";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0;
+}
+.logo-container .logo {
+  background-image: url("../asset/SVG/Asset 3.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 4em;
+  width: 4em;
+  padding: 0.2em;
+}
+.logo-container h1 {
+  text-align: center;
+  margin: auto 0;
+}
+
+.login-signup {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+  width: 48vw;
+  margin: 10% auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+}
+
+.login-signup-left {
+  height: inherit;
+  width: 45%;
+  background-image: url("../asset/4x/Asset 2xxxhdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.login-signup-right {
+  background-color: #fff;
+  height: inherit;
+  padding: 1em;
+  width: 65%;
+}
+
+/*# sourceMappingURL=main.css.map */

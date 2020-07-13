@@ -1,0 +1,113 @@
+@import "~antd/dist/antd.css";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+// login-signup page
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0;
+    .logo {
+        background-image: url("../asset/SVG/Asset\ 3.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 4em;
+        width: 4em;
+        padding: 0.2em;
+    }
+    h1 {
+        text-align: center;
+        margin: auto 0;
+    }
+}
+.login-signup {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    height: 60vh;
+    width: 48vw;
+    margin: 10% auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+}
+.login-signup-left {
+    height: inherit;
+    width: 45%;
+    background-image: url("../asset/4x/Asset\ 2xxxhdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.login-signup-right {
+    background-color: #fff;
+    height: inherit;
+
+    padding: 1em;
+    width: 65%;
+    // .ant-input {
+    //     width: 30%;
+    // }
+
+    //     .login {
+    //         display: flex;
+    //         justify-content: center;
+    //         flex-direction: column;
+    //         // width: 50%;
+    //         margin: 0 auto;
+    //     }
+    //     .login-form {
+    //         display: flex;
+    //         flex-direction: column;
+    //         .password {
+    //             // margin-top: 1em;
+    //             // margin-bottom: -0.2em;
+    //             // margin-left: 0.8em;
+    //             color: #aaa;
+    //         }
+    //         .ant-input {
+    //             margin: 0.5em 0 1em 0;
+    //             border: none;
+    //             border-bottom: 1px solid #ccc;
+    //         }
+    //         .login-btn {
+    //             // margin: 2em 0 0.5em 0;
+    //         }
+
+    //         .forgot-password {
+    //             color: orange;
+    //         }
+    //     }
+
+    //     .signup {
+    //         // margin-bottom: 2em;
+    //         text-align: center;
+
+    //         a {
+    //             color: #f00;
+    //             font-weight: bold;
+    //         }
+    //     }
+    // }
+    // // signup portion
+    // .btn {
+    //     background-color: none;
+    //     border: none;
+    // }
+    // .facebook-logo {
+    //     background-image: url("../asset/SVG/Asset\ 6.svg");
+    //     width: 2.5em;
+    //     height: 2.5em;
+    //     background-color: #fff;
+    // }
+    // .google-logo {
+    //     background-image: url("../asset/SVG/Asset\ 5.svg");
+    //     width: 2.5em;
+    //     height: 2.5em;
+    //     background-color: #fff;
+}
