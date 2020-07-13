@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "antd";
 export default function Cards(props) {
     return (
-        <div className="cards" key={props.key}>
+        <div className="cards" key={props.id}>
             <div className="cards-header">
                 {String(props.type).toLowerCase() === "home" ? (
                     <div className="home-icon"></div>
@@ -19,7 +19,12 @@ export default function Cards(props) {
                 <p>{props.address}</p>
                 <div className="cards-btn-container">
                     <Button className="cards-btn edit">Edit</Button>
-                    <Button className="cards-btn delete">Delete</Button>
+                    <Button
+                        className="cards-btn delete"
+                        onClick={() => props.delete(props.id)}
+                    >
+                        Delete
+                    </Button>
                 </div>
             </div>
         </div>

@@ -11,16 +11,19 @@ export default function Home() {
             type: "home",
             address:
                 "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+            date: "",
         },
         {
             type: "office",
             address:
                 "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+            date: "",
         },
         {
             type: "pg",
             address:
                 "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+            date: "",
         },
     ]);
     const [address, setAddress] = useState({ type: "", address: "" });
@@ -33,7 +36,11 @@ export default function Home() {
     );
 
     function onChange(e) {
-        setAddress({ ...address, [e.target.name]: [e.target.value] });
+        setAddress({
+            ...address,
+            [e.target.name]: [e.target.value],
+            date: Date.now(),
+        });
     }
     function showModal() {
         setState({
@@ -70,12 +77,24 @@ export default function Home() {
         setAddress({ type: "", address: "" });
     }
     // DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India
-
+    function handleDelete(key) {
+        const filteredData = allAddress.filter(
+            (address) => address.date !== key
+        );
+        setAllAddress(filteredData);
+    }
     const cardsContainer = (
         <div className="cards-container">
-            {allAddress.map((data) => {
-                console.log(data);
-                return <Cards type={data.type} address={data.address} />;
+            {allAddress.map((address) => {
+                console.log(address);
+                return (
+                    <Cards
+                        id={address.date}
+                        type={address.type}
+                        address={address.address}
+                        delete={handleDelete}
+                    />
+                );
             })}
         </div>
     );

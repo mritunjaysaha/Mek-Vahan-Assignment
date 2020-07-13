@@ -9,6 +9,7 @@ export default function useFetchData(url, options) {
             await axios
                 .post(url, options)
                 .then((res) => {
+                    console.log({ res });
                     setResponse(res.data.status);
                 })
                 .catch((err) => {

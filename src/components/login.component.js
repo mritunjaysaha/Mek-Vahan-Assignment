@@ -4,8 +4,8 @@ import { Button, Input, Form } from "antd";
 import useFetchData from "../hooks/useFetchData";
 export default function Login() {
     const url = "https://mekvahan.com/api/android_intern_task";
-    const [mobile, setMobile] = useState("99999");
-    const [password, setPassword] = useState("0123456789");
+    const [mobile, setMobile] = useState("");
+    const [password, setPassword] = useState("");
     const fetchedData = useFetchData(url, { mobile, password });
     const [message, setMessage] = useState("");
     function onChangeMobile(e) {
