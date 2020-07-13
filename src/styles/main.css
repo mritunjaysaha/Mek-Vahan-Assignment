@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+.ant-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
 .close {
   background-image: url("../asset/4x/Asset 4xxxhdpi.png");
   background-size: contain;
@@ -80,10 +85,6 @@
   color: #aaa;
   margin: 0;
   padding: 3em 0 0 0;
-}
-.login-signup-right .login-form .ant-input {
-  border: none;
-  border-bottom: 1px solid #ccc;
 }
 .login-signup-right .login-form .forgot-password {
   color: orange;
@@ -177,12 +178,10 @@
 }
 .home-content-left .profile {
   background-color: #999;
-  height: 60px;
-  width: 60px;
+  height: 4em;
+  width: 4em;
   border-radius: 50%;
-}
-.home-content-left .greet-user {
-  padding: 0 1em;
+  margin-right: 1em;
 }
 .home-content-left .greet-user h3 {
   font-size: 18px;
@@ -219,19 +218,6 @@
   align-items: center;
   padding: 0 1em;
 }
-.home-content-right .active-tab .address-btn {
-  border: none;
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-}
-.home-content-right .active-tab .address-btn p {
-  padding: 0.2em;
-}
-.home-content-right .active-tab .address-btn:hover {
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
-}
 .home-content-right .active-tab-body {
   height: 84vh;
 }
@@ -240,6 +226,20 @@
   background-size: 45%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.address-btn {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+.address-btn p {
+  padding: 0.2em;
+}
+.address-btn:hover {
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=main.css.map */

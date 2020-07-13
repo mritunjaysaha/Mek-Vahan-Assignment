@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Button, Layout } from "antd";
-
+import Popup from "./modal.component";
 const { Content } = Layout;
 export default function Home() {
     const [data, setData] = useState();
-    function handleClick() {
-        const container = document.querySelector(".active-tab-body");
-        console.log(container);
-        container.classList.remove("empty-body");
-    }
+    function handleClick() {}
 
     return (
         <Layout className="home-layout">
@@ -19,7 +15,7 @@ export default function Home() {
                         <div className="greet-user">
                             <h3>
                                 Hi <br />
-                                Mekvahan
+                                Mekvahan!
                             </h3>
                         </div>
                     </div>
@@ -35,10 +31,7 @@ export default function Home() {
                 <section className="home-content-right">
                     <div className="active-tab">
                         <h3>My Address</h3>
-                        <Button className="address-btn" onClick={handleClick}>
-                            <p>&#43;</p>
-                            <p>Add Address</p>
-                        </Button>
+                        <Popup />
                     </div>
                     <hr />
 
