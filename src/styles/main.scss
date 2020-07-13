@@ -172,7 +172,7 @@
     }
 }
 .home-content-left {
-    width: 20vw;
+    width: 30vw;
     position: relative;
     height: 90%;
     margin-right: 2em;
@@ -259,10 +259,62 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex: 0 0 1;
+    // padding: 2em;
 }
 .cards {
-    border: 1px solid #f00;
-    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 44%;
+    padding: 1em;
+    margin-left: 4%;
     margin-top: 4%;
-    margin-left: 6.67%;
+}
+
+.cards-header {
+    display: flex;
+    flex-direction: row;
+    // padding: 1em;
+    p {
+        padding-right: 1em;
+    }
+}
+.cards-address {
+    padding-left: 2em;
+}
+.cards-btn-container {
+    display: flex;
+    flex-direction: row;
+}
+.cards-btn {
+    width: 10em;
+    border-radius: 8px;
+    color: #fff;
+}
+.edit {
+    background-color: var(--mek-vahan) !important;
+    margin-right: 1em;
+}
+.delete {
+    background-color: #ccc;
+}
+.home-icon,
+.office-icon,
+.pg-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+    // background-color: #f00;
+    padding-right: 2em;
+}
+
+.home-icon {
+    background-image: url("../asset/4x/Asset\ 8xxxhdpi.png");
+}
+.office-icon {
+    background-image: url("../asset/4x/Asset\ 10xxxhdpi.png");
+}
+
+.pg-icon {
+    background-image: url("../asset/4x/Asset\ 9xxxhdpi.png");
 }
