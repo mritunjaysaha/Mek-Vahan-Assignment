@@ -1,4 +1,8 @@
 @import "~antd/dist/antd.css";
+:root {
+  --mek-vahan: #d50000;
+}
+
 *,
 *::before,
 *::after {
@@ -6,38 +10,51 @@
   margin: 0;
 }
 
+.close {
+  background-image: url("../asset/4x/Asset 4xxxhdpi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 17px;
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  right: 10px;
+}
+
 .logo-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 1em 0;
+  padding: 2em 0 1em 0;
 }
 .logo-container .logo {
-  background-image: url("../asset/SVG/Asset 3.svg");
-  background-size: 100%;
+  background-image: url("../asset/4x/Asset 3xxxhdpi.png");
+  background-size: 80%;
   background-repeat: no-repeat;
   height: 4em;
   width: 4em;
-  padding: 0.2em;
 }
-.logo-container h1 {
+.logo-container h2 {
   text-align: center;
   margin: auto 0;
+  color: var(--mek-vahan);
+  font-weight: 700;
 }
 
 .login-signup {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 60vh;
-  width: 48vw;
-  margin: 10% auto;
+  height: 80vh;
+  width: 60vw;
+  margin: 5% auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
 }
 
 .login-signup-left {
   height: inherit;
-  width: 45%;
+  width: 50%;
   background-image: url("../asset/4x/Asset 2xxxhdpi.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -46,8 +63,89 @@
 .login-signup-right {
   background-color: #fff;
   height: inherit;
-  padding: 1em;
   width: 65%;
+  padding: 0 7em;
+}
+.login-signup-right .login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.login-signup-right .login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-signup-right .login-form .password {
+  color: #aaa;
+  margin: 0;
+  padding: 3em 0 0 0;
+}
+.login-signup-right .login-form .ant-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.login-signup-right .login-form .forgot-password {
+  color: orange;
+  padding: 0.5em 0 4em 0;
+}
+.login-signup-right .login-form .login-btn {
+  background-color: var(--mek-vahan);
+}
+.login-signup-right .separation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.login-signup-right .separation hr {
+  width: 40%;
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+}
+.login-signup-right .separation p {
+  color: #aaa;
+  margin-top: -0.8em;
+}
+.login-signup-right .signup {
+  text-align: center;
+  padding: 0.5em 0;
+}
+.login-signup-right .signup a {
+  color: var(--mek-vahan);
+  font-weight: bold;
+}
+.login-signup-right .continue-with {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.login-signup-right .continue-with p {
+  color: #aaa;
+}
+.login-signup-right .continue-with div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn {
+  background-color: none;
+  border: none;
+}
+
+.facebook-logo {
+  background-image: url("../asset/SVG/Asset 6.svg");
+  width: 3em;
+  height: 3em;
+  background-color: #fff;
+}
+
+.google-logo {
+  background-image: url("../asset/SVG/Asset 5.svg");
+  width: 3em;
+  height: 3em;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */

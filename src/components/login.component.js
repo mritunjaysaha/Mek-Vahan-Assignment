@@ -13,10 +13,11 @@ export default function Login() {
                 <div className="login-signup-right">
                     <div className="login">
                         <div className="logo-container">
+                            <div className="close"></div>
                             <div className="logo">
                                 <img src="../" alt="" srcset="" />
                             </div>
-                            <h1>MEKVAHAN</h1>
+                            <h2>MEKVAHAN</h2>
                         </div>
                         <Form className="login-form" name="basic">
                             <Input
@@ -45,12 +46,12 @@ export default function Login() {
                                 </p>
                             </div>
                         </Form>
-                        <div>
+                        <div className="separation">
                             <hr />
-                            <p>or</p>
+                            <p>Or</p>
                             <hr />
                         </div>
-                        <div>
+                        <div className="continue-with">
                             <p>Continue with</p>
                             <div>
                                 <button className="btn facebook-logo"></button>
