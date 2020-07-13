@@ -1,15 +1,18 @@
 import React from "react";
-import useFetchData from "./hooks/useFetchData";
-
+import { Router } from "@reach/router";
+import Login from "./components/login.component";
 function App() {
-    const res = useFetchData("https://mekvahan.com/api/android_intern_task", {
-        mobile: "9999999999",
-        password: "0123456789",
-    });
-
-    console.log("here", res);
-
-    return <div className="App">Hello, World</div>;
+    function Home() {
+        return <Login />;
+    }
+    return (
+        <>
+            <div className="App">Hello, World</div>
+            <Router>
+                <Home path="/" />
+            </Router>
+        </>
+    );
 }
 
 export default App;
