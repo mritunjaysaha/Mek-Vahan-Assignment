@@ -6,31 +6,18 @@ import Cards from "./cards.component";
 const { Content } = Layout;
 export default function Home() {
     const [state, setState] = useState({ visible: false });
-    const [allAddress, setAllAddress] = useState([
-        {
-            type: "home",
-            address:
-                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
-            date: "",
-        },
-        {
-            type: "office",
-            address:
-                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
-            date: "",
-        },
-        {
-            type: "pg",
-            address:
-                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
-            date: "",
-        },
-    ]);
+    const [allAddress, setAllAddress] = useState([]);
     const [address, setAddress] = useState({ type: "", address: "" });
 
     useEffect(
         function () {
-            console.log({ allAddress });
+            const container = document.querySelector(".active-tab-body");
+
+            if (allAddress.length > 0) {
+                container.classList.remove("empty-body");
+            } else {
+                container.classList.add("empty-body");
+            }
         },
         [allAddress]
     );
@@ -53,10 +40,6 @@ export default function Home() {
         setState({
             visible: false,
         });
-        const container = document.querySelector(".active-tab-body");
-        console.log(container);
-        container.classList.remove("empty-body");
-        console.log("address", address);
 
         const currentAddress = address;
         setAllAddress([...allAddress, currentAddress]);
@@ -82,6 +65,7 @@ export default function Home() {
         );
         setAllAddress(filteredData);
     }
+
     const cardsContainer = (
         <div className="cards-container">
             {allAddress.map((address) => {
@@ -140,7 +124,9 @@ export default function Home() {
                     </div>
                     <hr />
 
-                    <div className=" active-tab-body">{cardsContainer}</div>
+                    <div className="empty-body active-tab-body">
+                        {cardsContainer}
+                    </div>
                 </section>
             </Content>
         </Layout>

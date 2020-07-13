@@ -12,7 +12,6 @@ export default function Popup(props) {
                             props.showModal();
                         }}
                     >
-                        {" "}
                         <p>&#43;</p>
                         <p>Add Address</p>
                     </Button>
@@ -30,6 +29,7 @@ export default function Popup(props) {
 
             <Modal
                 title="Address"
+                className="popup"
                 visible={props.state.visible}
                 onOk={() => {
                     props.handleOk();
