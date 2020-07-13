@@ -1,10 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout } from "antd";
 import Popup from "./modal.component";
+import Cards from "./cards.component";
+
 const { Content } = Layout;
 export default function Home() {
-    const [data, setData] = useState();
+    const [state, setState] = useState({ visible: false });
+    const [allAddress, setAllAddress] = useState([
+        { type: "home", address: "akjgdkjagfjka" },
+        { type: "office", address: "office" },
+        { type: "pg", address: "pg" },
+    ]);
+    const [address, setAddress] = useState({ type: "", address: "" });
 
+    useEffect(
+        function () {
+            console.log({ allAddress });
+        },
+        [allAddress]
+    );
+
+    function onChange(e) {
+        setAddress({ ...address, [e.target.name]: [e.target.value] });
+    }
+    function showModal() {
+        setState({
+            visible: true,
+        });
+    }
+
+    function handleOk(e) {
+        console.log("ok", e);
+        setState({
+            visible: false,
+        });
+        const container = document.querySelector(".active-tab-body");
+        console.log(container);
+        container.classList.remove("empty-body");
+        console.log("address", address);
+
+        const currentAddress = address;
+        setAllAddress([...allAddress, currentAddress]);
+
+        resetForm();
+    }
+
+    function handleCancel(e) {
+        console.log(e);
+        setState({
+            visible: false,
+        });
+
+        resetForm();
+    }
+
+    function resetForm() {
+        setAddress({ type: "", address: "" });
+    }
+
+    const cardsContainer = (
+        <div className="cards-container">
+            {allAddress.map((data) => {
+                console.log(data);
+                return <Cards type={data.type} address={data.address} />;
+            })}
+        </div>
+    );
     return (
         <Layout className="home-layout">
             <Content className="home-content">
@@ -30,11 +91,19 @@ export default function Home() {
                 <section className="home-content-right">
                     <div className="active-tab">
                         <h3>My Address</h3>
-                        <Popup />
+                        <Popup
+                            state={state}
+                            showModal={showModal}
+                            handleOk={handleOk}
+                            handleCancel={handleCancel}
+                            onChange={onChange}
+                            type={address.type}
+                            address={address.address}
+                        />
                     </div>
                     <hr />
 
-                    <div className="empty-body active-tab-body"></div>
+                    <div className=" active-tab-body">{cardsContainer}</div>
                 </section>
             </Content>
         </Layout>

@@ -152,6 +152,7 @@
 .home-layout {
   background-color: #fae7ea;
   height: 100vh;
+  padding: 2em;
 }
 
 .home-content {
@@ -167,7 +168,8 @@
 .home-content-left {
   width: 20vw;
   position: relative;
-  margin: 2% 0 2% 2%;
+  height: 90%;
+  margin-right: 2em;
 }
 .home-content-left .user-info {
   background-color: white;
@@ -176,6 +178,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 2em;
+  height: 15vh;
 }
 .home-content-left .profile {
   background-color: #999;
@@ -195,7 +198,7 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  height: calc(100% - (4% + 13%));
+  height: 73vh;
 }
 .home-content-left .user-panel .active {
   color: var(--mek-vahan) !important;
@@ -208,7 +211,6 @@
 .home-content-right {
   background-color: #fff;
   width: 100%;
-  margin: 2%;
 }
 .home-content-right .active-tab {
   height: 10vh;
@@ -217,9 +219,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
-}
-.home-content-right .active-tab-body {
-  height: 84vh;
 }
 .home-content-right .empty-body {
   background-image: url("../asset/4x/Asset 15xxxhdpi.png");
@@ -240,6 +239,20 @@
 .address-btn:hover {
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 0 1;
+}
+
+.cards {
+  border: 1px solid #f00;
+  width: 40%;
+  margin-top: 4%;
+  margin-left: 6.67%;
 }
 
 /*# sourceMappingURL=main.css.map */
