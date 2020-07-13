@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { Button, Input, Form } from "antd";
 import useFetchData from "../hooks/useFetchData";
 export default function Login() {
     const url = "https://mekvahan.com/api/android_intern_task";
     const [mobile, setMobile] = useState("9999999999");
     const [password, setPassword] = useState("0123456789");
-
-    const FetchData = useFetchData(url, { mobile, password });
+    const fetchedData = useFetchData(url, { mobile, password });
 
     function onChangeMobile(e) {
         console.log(e.target.value);
@@ -19,7 +18,11 @@ export default function Login() {
     }
 
     function onSubmit() {
-        console.log(FetchData);
+        console.log(fetchedData);
+
+        if (fetchedData.response === true) {
+            navigate("/home");
+        }
     }
     return (
         <>
@@ -29,7 +32,7 @@ export default function Login() {
                     <div className="login">
                         <div className="logo-container">
                             <div className="close"></div>
-                            <div className="logo">></div>
+                            <div className="logo"></div>
                             <h2>MEKVAHAN</h2>
                         </div>
                         <Form
