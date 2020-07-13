@@ -9,22 +9,31 @@ export default function Login() {
     const fetchedData = useFetchData(url, { mobile, password });
     const [message, setMessage] = useState("");
     function onChangeMobile(e) {
-        console.log(e.target.value);
+        //sets the typed mobile number
         setMobile(e.target.value);
     }
+
     function onChangePassword(e) {
-        console.log(e.target.value);
+        //sets the password
         setPassword(e.target.value);
     }
 
     function onSubmit() {
-        console.log(fetchedData);
-
+        //if mobile number and password are correct then it
+        // will navigate to the my address page
+        // else, it will display the message that the mobile
+        // number or password is wrong
         if (fetchedData.response === true) {
             navigate("/home");
         } else {
             setMessage("Mobile number or password is wrong");
+            resetForm();
         }
+    }
+
+    function resetForm() {
+        setMobile("");
+        setPassword("");
     }
     return (
         <>
@@ -37,11 +46,7 @@ export default function Login() {
                             <div className="logo"></div>
                             <h2>MEKVAHAN</h2>
                         </div>
-                        <Form
-                            // onSubmit={onSubmit}
-                            className="login-form"
-                            name="basic"
-                        >
+                        <Form className="login-form" name="basic">
                             <Input
                                 type="text"
                                 name="mobile"

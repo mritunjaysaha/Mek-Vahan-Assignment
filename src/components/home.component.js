@@ -14,8 +14,10 @@ export default function Home() {
             const container = document.querySelector(".active-tab-body");
 
             if (allAddress.length > 0) {
+                // It will remove the background svg when a address is entered
                 container.classList.remove("empty-body");
             } else {
+                // It will add the background svg if there are no addresses to display
                 container.classList.add("empty-body");
             }
         },
@@ -23,6 +25,7 @@ export default function Home() {
     );
 
     function onChange(e) {
+        // gets the address typed by the user
         setAddress({
             ...address,
             [e.target.name]: [e.target.value],
@@ -30,13 +33,14 @@ export default function Home() {
         });
     }
     function showModal() {
+        // opens the modal popup
         setState({
             visible: true,
         });
     }
 
     function handleOk(e) {
-        console.log("ok", e);
+        // closes the modal and updates the addresses list
         setState({
             visible: false,
         });
@@ -48,7 +52,7 @@ export default function Home() {
     }
 
     function handleCancel(e) {
-        console.log(e);
+        // closes the modal
         setState({
             visible: false,
         });
@@ -57,9 +61,11 @@ export default function Home() {
     }
 
     function resetForm() {
+        // resets the modal forms data
         setAddress({ type: "", address: "" });
     }
     function handleDelete(key) {
+        // deletes the address when the delete button is clicked
         const filteredData = allAddress.filter(
             (address) => address.date !== key
         );
@@ -67,6 +73,7 @@ export default function Home() {
     }
 
     const cardsContainer = (
+        // displays all the cards
         <div className="cards-container">
             {allAddress.map((address) => {
                 console.log(address);

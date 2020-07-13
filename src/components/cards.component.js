@@ -5,6 +5,8 @@ export default function Cards(props) {
     return (
         <div className="cards" key={props.id}>
             <div className="cards-header">
+                {/* When the type is home. it will show the home icon and similarly
+             for the office and PG icon*/}
                 {String(props.type).toLowerCase() === "home" ? (
                     <div className="home-icon"></div>
                 ) : null}
@@ -19,6 +21,7 @@ export default function Cards(props) {
             <div className="cards-address">
                 <p>{props.address}</p>
                 <div className="cards-btn-container">
+                    {/* When the edit button is clicked it will open the popup */}
                     <Popup
                         name="edit"
                         state={props.state}
