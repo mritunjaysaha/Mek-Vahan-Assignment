@@ -2,18 +2,18 @@ import React from "react";
 import { Button } from "antd";
 export default function Cards(props) {
     return (
-        <div className="cards">
+        <div className="cards" key={props.key}>
             <div className="cards-header">
-                {props.type.toLowerCase() === "home" ? (
+                {String(props.type).toLowerCase() === "home" ? (
                     <div className="home-icon"></div>
                 ) : null}
-                {props.type.toLowerCase() === "office" ? (
+                {String(props.type).toLowerCase() === "office" ? (
                     <div className="office-icon"></div>
                 ) : null}
-                {props.type.toLowerCase() === "pg" ? (
+                {String(props.type).toLowerCase() === "pg" ? (
                     <div className="pg-icon"></div>
                 ) : null}
-                <h4>{props.type.toUpperCase()}</h4>
+                <h4>{String(props.type).toUpperCase()}</h4>
             </div>
             <div className="cards-address">
                 <p>{props.address}</p>

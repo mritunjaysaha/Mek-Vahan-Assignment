@@ -7,9 +7,21 @@ const { Content } = Layout;
 export default function Home() {
     const [state, setState] = useState({ visible: false });
     const [allAddress, setAllAddress] = useState([
-        { type: "home", address: "akjgdkjagfjka" },
-        { type: "office", address: "office" },
-        { type: "pg", address: "pg" },
+        {
+            type: "home",
+            address:
+                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+        },
+        {
+            type: "office",
+            address:
+                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+        },
+        {
+            type: "pg",
+            address:
+                "DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India",
+        },
     ]);
     const [address, setAddress] = useState({ type: "", address: "" });
 
@@ -57,6 +69,7 @@ export default function Home() {
     function resetForm() {
         setAddress({ type: "", address: "" });
     }
+    // DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India
 
     const cardsContainer = (
         <div className="cards-container">

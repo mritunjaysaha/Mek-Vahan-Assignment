@@ -2,6 +2,7 @@
 
 :root {
     --mek-vahan: #d50000;
+    --btn-radius: 6px;
 }
 *,
 *::before,
@@ -92,6 +93,7 @@
 
         .login-btn {
             background-color: var(--mek-vahan);
+            border-radius: var(--btn-radius);
         }
     }
     // separate the login and signup section
@@ -136,6 +138,16 @@
         }
     }
 }
+// Error message
+.err-message {
+    margin-top: -3em;
+    margin-bottom: 0.4em;
+    background-color: pink;
+    padding: 0.5em;
+    border-radius: 10px;
+    text-align: center;
+}
+
 // signup portion
 .btn {
     background-color: none;
@@ -229,15 +241,16 @@
         padding: 0 1em;
     }
     .active-tab-body {
-        // height: 100%;
+        height: 100%;
     }
     .empty-body {
         background-image: url("../asset/4x/Asset\ 15xxxhdpi.png");
-        background-size: 45%;
+        background-size: 50%;
         background-repeat: no-repeat;
         background-position: center;
     }
 }
+
 .address-btn {
     border: none;
     display: flex;
@@ -287,7 +300,7 @@
 }
 .cards-btn {
     width: 10em;
-    border-radius: 8px;
+    border-radius: var(--btn-radius);
     color: #fff;
 }
 .edit {

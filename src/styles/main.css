@@ -1,6 +1,7 @@
 @import "~antd/dist/antd.css";
 :root {
   --mek-vahan: #d50000;
+  --btn-radius: 6px;
 }
 
 *,
@@ -92,6 +93,7 @@
 }
 .login-signup-right .login-form .login-btn {
   background-color: var(--mek-vahan);
+  border-radius: var(--btn-radius);
 }
 .login-signup-right .separation {
   display: flex;
@@ -128,6 +130,15 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.err-message {
+  margin-top: -3em;
+  margin-bottom: 0.4em;
+  background-color: pink;
+  padding: 0.5em;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .btn {
@@ -220,9 +231,12 @@
   align-items: center;
   padding: 0 1em;
 }
+.home-content-right .active-tab-body {
+  height: 100%;
+}
 .home-content-right .empty-body {
   background-image: url("../asset/4x/Asset 15xxxhdpi.png");
-  background-size: 45%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -276,7 +290,7 @@
 
 .cards-btn {
   width: 10em;
-  border-radius: 8px;
+  border-radius: var(--btn-radius);
   color: #fff;
 }
 

@@ -4,10 +4,10 @@ import { Button, Input, Form } from "antd";
 import useFetchData from "../hooks/useFetchData";
 export default function Login() {
     const url = "https://mekvahan.com/api/android_intern_task";
-    const [mobile, setMobile] = useState("9999999999");
+    const [mobile, setMobile] = useState("99999");
     const [password, setPassword] = useState("0123456789");
     const fetchedData = useFetchData(url, { mobile, password });
-
+    const [message, setMessage] = useState("");
     function onChangeMobile(e) {
         console.log(e.target.value);
         setMobile(e.target.value);
@@ -22,6 +22,8 @@ export default function Login() {
 
         if (fetchedData.response === true) {
             navigate("/home");
+        } else {
+            setMessage("Mobile number or password is wrong");
         }
     }
     return (
@@ -58,6 +60,10 @@ export default function Login() {
                             <Link className="forgot-password" to="#">
                                 Forgot password?
                             </Link>
+
+                            {message !== "" ? (
+                                <div className="err-message">{message}</div>
+                            ) : null}
                             <Button
                                 onClick={onSubmit}
                                 className="login-btn"
@@ -66,7 +72,6 @@ export default function Login() {
                             >
                                 Login
                             </Button>
-                            {/* <Link to="/home">HOME</Link> */}
                         </Form>
                         <div className="signup">
                             <p>
