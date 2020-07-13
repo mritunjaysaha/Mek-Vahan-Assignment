@@ -170,22 +170,22 @@
 .home-content-left .user-info {
   background-color: white;
   margin: 1.25em;
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   position: relative;
   display: flex;
   flex-direction: row;
 }
 .home-content-left .profile {
   background-color: #999;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 .home-content-left .greet-user {
   padding: 0 1em;
 }
 .home-content-left .greet-user h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   white-space: pre-line;
 }
@@ -196,7 +196,7 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  height: calc(100vh - (3em + 75px + 2em));
+  height: 77%;
 }
 .home-content-left .user-panel .active {
   color: var(--mek-vahan) !important;

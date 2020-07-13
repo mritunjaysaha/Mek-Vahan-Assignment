@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Layout } from "antd";
 
 const { Content } = Layout;
 export default function Home() {
+    const [data, setData] = useState();
+    function handleClick() {
+        const container = document.querySelector(".active-tab-body");
+        console.log(container);
+        container.classList.remove("empty-body");
+    }
+
     return (
         <Layout className="home-layout">
             <Content className="home-content">
@@ -28,7 +35,7 @@ export default function Home() {
                 <section className="home-content-right">
                     <div className="active-tab">
                         <h3>My Address</h3>
-                        <Button className="address-btn">
+                        <Button className="address-btn" onClick={handleClick}>
                             <p>&#43;</p>
                             <p>Add Address</p>
                         </Button>
