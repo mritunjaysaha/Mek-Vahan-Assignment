@@ -4,15 +4,30 @@ import { Modal, Button, Input } from "antd";
 export default function Popup(props) {
     return (
         <div>
-            <Button
-                className="address-btn"
-                onClick={() => {
-                    props.showModal();
-                }}
-            >
-                <p>&#43;</p>
-                <p>Add Address</p>
-            </Button>
+            {props.name !== "edit" ? (
+                <>
+                    <Button
+                        className="address-btn"
+                        onClick={() => {
+                            props.showModal();
+                        }}
+                    >
+                        {" "}
+                        <p>&#43;</p>
+                        <p>Add Address</p>
+                    </Button>
+                </>
+            ) : (
+                <Button
+                    className="cards-btn edit"
+                    onClick={() => {
+                        props.showModal();
+                    }}
+                >
+                    <p>Edit</p>
+                </Button>
+            )}
+
             <Modal
                 title="Address"
                 visible={props.state.visible}

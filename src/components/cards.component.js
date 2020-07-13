@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "antd";
+import Popup from "./modal.component";
 export default function Cards(props) {
     return (
         <div className="cards" key={props.id}>
@@ -18,7 +19,16 @@ export default function Cards(props) {
             <div className="cards-address">
                 <p>{props.address}</p>
                 <div className="cards-btn-container">
-                    <Button className="cards-btn edit">Edit</Button>
+                    <Popup
+                        name="edit"
+                        state={props.state}
+                        showModal={props.showModal}
+                        handleOk={props.handleOk}
+                        handleCancel={props.handleCancel}
+                        onChange={props.onChange}
+                        type={props.address.type}
+                        address={props.address.address}
+                    />
                     <Button
                         className="cards-btn delete"
                         onClick={() => props.delete(props.id)}

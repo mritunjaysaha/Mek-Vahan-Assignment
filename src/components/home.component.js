@@ -76,7 +76,6 @@ export default function Home() {
     function resetForm() {
         setAddress({ type: "", address: "" });
     }
-    // DTTDC, Under Flyover Facility, Raja Garden Crossing Rd, New Delhi 110015, India
     function handleDelete(key) {
         const filteredData = allAddress.filter(
             (address) => address.date !== key
@@ -93,6 +92,11 @@ export default function Home() {
                         type={address.type}
                         address={address.address}
                         delete={handleDelete}
+                        state={state}
+                        showModal={showModal}
+                        handleOk={handleOk}
+                        handleCancel={handleCancel}
+                        onChange={onChange}
                     />
                 );
             })}
@@ -124,6 +128,7 @@ export default function Home() {
                     <div className="active-tab">
                         <h3>My Address</h3>
                         <Popup
+                            name="address"
                             state={state}
                             showModal={showModal}
                             handleOk={handleOk}
