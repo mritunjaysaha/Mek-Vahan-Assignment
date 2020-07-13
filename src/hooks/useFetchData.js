@@ -6,17 +6,12 @@ export default function useFetchData(url, options) {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log("fetchdata");
-
             await axios
                 .post(url, options)
                 .then((res) => {
-                    console.log(res);
-                    console.log("data", res.data.status);
                     setResponse(res.data.status);
                 })
                 .catch((err) => {
-                    console.log("err", err);
                     setError(true);
                 });
         };

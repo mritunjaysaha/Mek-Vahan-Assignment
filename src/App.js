@@ -4,12 +4,13 @@ import Login from "./components/login.component";
 import "./styles/main.css";
 function App() {
     function Home() {
-        return <Login />;
+        return <div>Hello, world</div>;
     }
     return (
         <>
             <Router>
-                <Home path="/" />
+                <Login exact path="/" />
+                <Home path="/home" />
             </Router>
         </>
     );

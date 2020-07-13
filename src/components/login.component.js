@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@reach/router";
 import { Button, Input, Form } from "antd";
-// asset 3 --- logo
-// asset 5 --- google
-// asset 6 --- facebook
-
+import useFetchData from "../hooks/useFetchData";
 export default function Login() {
+    const url = "https://mekvahan.com/api/android_intern_task";
+    const [mobile, setMobile] = useState("9999999999");
+    const [password, setPassword] = useState("0123456789");
+
+    const FetchData = useFetchData(url, { mobile, password });
+
+    function onChangeMobile(e) {
+        console.log(e.target.value);
+        setMobile(e.target.value);
+    }
+    function onChangePassword(e) {
+        console.log(e.target.value);
+        setPassword(e.target.value);
+    }
+
+    function onSubmit() {
+        console.log(FetchData);
+    }
     return (
         <>
             <section className="login-signup">
@@ -14,38 +29,50 @@ export default function Login() {
                     <div className="login">
                         <div className="logo-container">
                             <div className="close"></div>
-                            <div className="logo">
-                                <img src="../" alt="" srcset="" />
-                            </div>
+                            <div className="logo">></div>
                             <h2>MEKVAHAN</h2>
                         </div>
-                        <Form className="login-form" name="basic">
+                        <Form
+                            // onSubmit={onSubmit}
+                            className="login-form"
+                            name="basic"
+                        >
                             <Input
                                 type="text"
                                 name="mobile"
                                 placeholder="10 digits mobile number"
+                                value={mobile}
+                                onChange={onChangeMobile}
                             />
                             <p className="password">Password</p>
                             <Input
                                 type="password"
                                 name="password"
                                 placeholder="Enter password"
+                                value={password}
+                                onChange={onChangePassword}
                             />
                             <Link className="forgot-password" to="#">
                                 Forgot password?
                             </Link>
-                            <Button className="login-btn" type="primary" danger>
+                            <Button
+                                onClick={onSubmit}
+                                className="login-btn"
+                                type="primary"
+                                danger
+                            >
                                 Login
                             </Button>
-                            <div className="signup">
-                                <p>
-                                    Don't have an account?{" "}
-                                    <span>
-                                        <Link to="#">Sign Up now</Link>
-                                    </span>
-                                </p>
-                            </div>
+                            {/* <Link to="/home">HOME</Link> */}
                         </Form>
+                        <div className="signup">
+                            <p>
+                                Don't have an account?{" "}
+                                <span>
+                                    <Link to="#">Sign Up now</Link>
+                                </span>
+                            </p>
+                        </div>
                         <div className="separation">
                             <hr />
                             <p>Or</p>
