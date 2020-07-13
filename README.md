@@ -1,3 +1,33 @@
+# Mek Vahan Assignment
+
+## A short gif of the project
+
+![assignmen gif](./demo/mekvahan-assignment.gif)
+
+Some of the screenshots of the assignment
+
+### Login page
+
+![Login screen](./demo/login.png)
+
+### Login page with error
+
+![Login screen error](./demo/login-err.png)
+
+### My Address page
+
+![Login screen empty](./demo/address-empty.png)
+
+### My address page with data
+
+![Login screen empty](./demo/address.png)
+
+### Popup
+
+![Login screen empty](./demo/address-popup.png)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
